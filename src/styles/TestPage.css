@@ -1,0 +1,97 @@
+.test-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.test-list h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.test-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.test-item {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.test-link {
+  text-decoration: none;
+  color: white;
+  background: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+.test-link:hover {
+  background: #0056b3;
+}
+
+.test-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.test-page h2 {
+  text-align: center;
+  color: #333;
+}
+
+.test-page .question {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.test-page .question p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.test-page button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.test-page button:hover {
+  background: #0056b3;
+}
+
+.test-page .result {
+  text-align: center;
+}
+
+/* Стили для уровней */
+.test-a1 {
+  background: #e7f3fe;
+}
+
+.test-a2 {
+  background: #dff8e3;
+}
+
+.test-b1 {
+  background: #fff4e6;
+}
+
+.test-b2 {
+  background: #fce5e5;
+}

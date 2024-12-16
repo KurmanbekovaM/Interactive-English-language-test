@@ -8,7 +8,6 @@ function HomePage() {
       <p>
         Пройдите тесты, чтобы узнать свой уровень английского языка, и улучшите свои знания.
       </p>
-      <img src="/images/welcome.jpg" alt="Welcome" />
     </div>
   );
 }

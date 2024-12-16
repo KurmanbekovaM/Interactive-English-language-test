@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: #007bff;
+  background: #286f8d;
   color: white;
 }
 
@@ -33,7 +33,23 @@
 }
 
 .header nav ul li a:hover {
-  background: white;
-  color: #007bff;
+  background: rgb(238, 239, 240);
+  color: #44494f;
   transition: 0.3s;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007bff; 
+}
+
+.header nav ul li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header nav ul li a svg {
+  margin-right: 8px;
+  font-size: 1.2em;  
 }

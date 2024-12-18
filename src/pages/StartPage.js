@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Auth.css';
 
 function StartPage() {
   return (
@@ -12,7 +11,7 @@ function StartPage() {
           <button type="button">Войти</button>
         </Link>
         <Link to="/register">
-          <button type="button">Регистрация</button>
+          <button type="button" style={{marginTop: '10px'}}>Регистрация</button>
         </Link>
       </form>
     </div>

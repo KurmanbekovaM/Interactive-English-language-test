@@ -6,7 +6,6 @@ function HomePage({ user }) {
     <div className="homepage">
       <h1>Добро пожаловать, {user && user.name}!</h1>
       <p>Пройдите тесты, чтобы узнать свой уровень английского языка, и улучшайте свои знания.</p>
-      <img src="/images/welcome.jpg" alt="Welcome" />
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import '../styles/Auth.css';
 
 function AuthPage({ onLogin }) {
   const [formData, setFormData] = useState({ email: '', password: '' });

@@ -1,15 +1,312 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #e9ecef;
+  font-family: Arial, sans-serif;
+  background: url('/public/images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: rgba(240, 240, 245, 0.9);
+}
+
+.auth form {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth form h2 {
+  margin-bottom: 15px;
   color: #333;
 }
 
-a {
-  text-decoration: none;
+.auth form input, .auth form select {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-a:hover {
-  text-decoration: underline;
+.auth form button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth form button:hover {
+  background: #0056b3;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.header nav ul li {
+  display: inline;
+}
+
+.header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.header nav ul li a:hover {
+  background: white;
+  color: #007bff;
+  transition: 0.3s;
+}
+
+.homepage {
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(244, 244, 249, 0.9);
+}
+
+.homepage h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.homepage p {
+  font-size: 1.2em;
+  margin-top: 15px;
+  color: #555;
+}
+
+.homepage img {
+  margin-top: 20px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.profile {
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background: rgba(249, 249, 249, 0.9);
+  border-radius: 10px;
+  text-align: left;
+}
+
+.profile h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.profile p {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.result-page {
+  padding: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  background: rgba(249, 249, 249, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.result-page h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.result-page p {
+  font-size: 18px;
+  color: #555;
+}
+
+.result-page a {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.result-page a:hover {
+  background-color: #45a049;
+}
+
+.test-list {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(249, 249, 249, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.test-list h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.test-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.test-item {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.test-link {
+  text-decoration: none;
+  color: white;
+  background: #007bff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+.test-link:hover {
+  background: #0056b3;
+}
+
+.test-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background: rgba(249, 249, 249, 0.9);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.test-page h2 {
+  text-align: center;
+  color: #333;
+}
+
+.test-page .question {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.test-page .question p {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+}
+
+.test-page button {
+  margin: 10px;
+  padding: 10px 20px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.test-page button:hover {
+  background: #0056b3;
+}
+
+.test-page .result {
+  text-align: center;
+}
+
+/* Цвета для разных уровней */
+.test-a1 {
+  background: rgba(231, 243, 254, 0.9);
+}
+
+.test-a2 {
+  background: rgba(223, 248, 227, 0.9);
+}
+
+.test-b1 {
+  background: rgba(255, 244, 230, 0.9);
+}
+
+.test-b2 {
+  background: rgba(252, 229, 229, 0.9);
+}
+
+/* Дополнительные стили для StartPage кнопок */
+.auth form a button {
+  margin-bottom: 10px; /* Добавим отступ между кнопками */
+}
+
+/* Стили для AddTestPage */
+fieldset {
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background: white;
+}
+
+legend {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Номер вопроса */
+.question-number {
+  font-weight: bold;
+  background: #eef;
+  padding: 5px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Поле правильного ответа */
+.correct-answer-field {
+  border: 2px solid #4CAF50;
+  border-radius: 5px;
+}
+
+/* Вопросы */
+.question-block {
+  background: #f4f4f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }

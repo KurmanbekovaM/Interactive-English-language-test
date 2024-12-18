@@ -8,6 +8,7 @@ import ProfilePage from './pages/ProfilePage';
 import TestList from './components/TestList';
 import TestPage from './components/TestPage';
 import AddTestPage from './pages/AddTestPage';
+import EditTestPage from './pages/EditTestPage';
 import Header from './components/Header';
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
         {user && user.role === 'student' && (
           <>
             <Route path="/" element={<HomePage user={user} />} />
-            <Route path="/tests" element={<TestList />} />
+            <Route path="/tests" element={<TestList user={user} />} />
             <Route path="/test/:level" element={<TestPage />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
             <Route path="*" element={<Navigate to="/" />} />
@@ -61,10 +62,11 @@ function App() {
         {user && user.role === 'teacher' && (
           <>
             <Route path="/" element={<HomePage user={user} />} />
-            <Route path="/tests" element={<TestList />} />
-            <Route path="/test/:level" element={<TestPage />} />
+            <Route path="/tests" element={<TestList user={user} />} />
             <Route path="/profile" element={<ProfilePage user={user} />} />
             <Route path="/add-test" element={<AddTestPage />} />
+            <Route path="/edit-test/:level" element={<EditTestPage />} />
+            {}
             <Route path="*" element={<Navigate to="/" />} />
           </>
         )}

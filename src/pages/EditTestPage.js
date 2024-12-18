@@ -1,17 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 
-function AddTestPage() {
-  const [testData, setTestData] = useState({
-    level: '',
-    name: '',
-    questions: [
-      {
-        question: '',
-        options: ['', '', '', ''],
-        answer: ''
-      }
-    ]
-  });
+function EditTestPage() {
+  const { level } = useParams();
+  const navigate = useNavigate();
+  
+  const [testData, setTestData] = useState(null);
+  
+  useEffect(() => {
+    const storedTests = JSON.parse(localStorage.getItem('tests')) || [];
+    const currentTest = storedTests.find((t) => t.level === level);
+    if (currentTest) {
+      setTestData(currentTest);
+    } else {
+      alert('Тест не найден');
+      navigate('/tests');
+    }
+  }, [level, navigate]);
 
   const handleLevelChange = (e) => {
     setTestData({ ...testData, level: e.target.value });
@@ -52,25 +57,23 @@ function AddTestPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const storedTests = JSON.parse(localStorage.getItem('tests')) || [];
-    storedTests.push(testData);
-    localStorage.setItem('tests', JSON.stringify(storedTests));
-    alert('Тест успешно добавлен!');
-    setTestData({
-      level: '',
-      name: '',
-      questions: [
-        {
-          question: '',
-          options: ['', '', '', ''],
-          answer: ''
-        }
-      ]
-    });
+    const testIndex = storedTests.findIndex((t) => t.level === level);
+    if (testIndex !== -1) {
+      // Обновляем тест
+      storedTests[testIndex] = testData;
+      localStorage.setItem('tests', JSON.stringify(storedTests));
+      alert('Изменения сохранены!');
+      navigate('/tests');
+    } else {
+      alert('Ошибка: Тест не найден!');
+    }
   };
+
+  if (!testData) return null;
 
   return (
     <div className="test-page">
-      <h2>Добавить тест</h2>
+      <h2>Редактировать тест</h2>
       <form onSubmit={handleSubmit} style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
         <fieldset>
           <legend>Общие данные теста</legend>
@@ -130,10 +133,10 @@ function AddTestPage() {
         </fieldset>
 
         <button type="button" onClick={addQuestion} style={{ marginRight: '10px' }}>Добавить вопрос</button>
-        <button type="submit">Сохранить тест</button>
+        <button type="submit">Сохранить изменения</button>
       </form>
     </div>
   );
 }
 
-export default AddTestPage;
+export default EditTestPage;

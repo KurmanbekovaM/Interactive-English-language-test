@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/TestPage.css';
 
-function TestList() {
+function TestList({ user }) {
   const tests = JSON.parse(localStorage.getItem('tests')) || [];
 
   return (
@@ -14,9 +14,15 @@ function TestList() {
         ) : (
           tests.map((test, index) => (
             <li key={index} className="test-item">
-              <Link to={`/test/${test.level}`} className="test-link">
-                {test.name} (Уровень: {test.level})
-              </Link>
+              {user && user.role === 'teacher' ? (
+                <Link to={`/edit-test/${test.level}`} className="test-link">
+                  Редактировать: {test.name} (Уровень: {test.level})
+                </Link>
+              ) : (
+                <Link to={`/test/${test.level}`} className="test-link">
+                  {test.name} (Уровень: {test.level})
+                </Link>
+              )}
             </li>
           ))
         )}

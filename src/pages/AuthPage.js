@@ -2,42 +2,35 @@ import React, { useState } from 'react';
 import '../styles/Auth.css';
 
 function AuthPage({ onLogin }) {
-  const [formData, setFormData] = useState({ name: '', email: '', age: '', password: '' });
+  const [formData, setFormData] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
-    onLogin(formData); // Передаем данные в App.js
+    const { email, password } = formData;
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find((u) => u.email === email && u.password === password);
+
+    if (user) {
+      onLogin(user);
+    } else {
+      alert('Неверный email или пароль');
+    }
   };
 
   return (
     <div className="auth">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleLogin}>
         <h2>Авторизация</h2>
-        <input
-          type="text"
-          name="name"
-          placeholder="Имя"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
         <input
           type="email"
           name="email"
           placeholder="Email"
           value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="number"
-          name="age"
-          placeholder="Возраст"
-          value={formData.age}
           onChange={handleChange}
           required
         />
